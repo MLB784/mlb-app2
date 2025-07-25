@@ -1,7 +1,8 @@
 import numpy as np
+from math import factorial  
 
-def poisson_probability(lambda_, k):
-    return (lambda_**k * np.exp(-lambda_)) / np.math.factorial(k)
+def poisson_probability(lmbda, k):
+    return (lmbda**k * np.exp(-lmbda)) / factorial(k)
 
 def estimate_goal_probabilities(home_avg_goals, away_avg_goals, max_goals=5):
     home_probs = [poisson_probability(home_avg_goals, i) for i in range(max_goals + 1)]
